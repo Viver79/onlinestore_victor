@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'banner_small.html' %}
+
+<div class="bikes">
+    <div class="mountain-sec">
+        <h2>Add category</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="OK">
+        </form>
+    </div>
+</div>
+
+{% endblock%}

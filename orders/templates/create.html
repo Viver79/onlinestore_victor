@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Оформление</h1>
+    <div class="cart-top"><h3>Ваш заказ</h3>
+        <ul>
+            {% for item in cart %}
+                <li>
+                    <h3>{{ item.bike.titel }}<span>{{ item.bike.titel_model }}</span></h3>
+                    {{ item.quantity }} x {{ item.bike.price }}=<span>${{ item.total_price }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Итого: ${{ cart.get_total_price }}</p>
+    </div>
+
+    <form action="." method="post" class="order-form">
+        {{ form.as_p }}
+        <p><input type="submit" value="Разместить заказ"></p>
+        {% csrf_token %}
+    </form>
+</>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'banner_small.html' %}
+
+<div class="cart">
+    <div class="container">
+        <div class="cart-top">
+            <a href={% url 'index' %}><< home </a>
+        </div>
+
+        <div class="col-md-9 cart-items">
+            <h2>My Shopping Bag
+             <span class="badge badge-pill badge-danger">
+                            {% with total_item=cart|length %}
+                                {% if cart|length > 0 %}
+                                {{ total_item }}{{ total_item|pluralize }}
+                                {% endif %}
+                            {% endwith %}
+             </span>
+             </h2>
+            <div class="cart-header">
+                {% for item in cart %}
+                    {% with bike=item.bike %}
+                        <div class="close1"><a href="{% url 'cart:cart_remove' bike.id %}">Remove</a></div>
+                            <div class="cart-sec">
+                                <div class="cart-item cyc"><img src={{ bike.images.url }}></div>
+                                <div class="cart-item-info">
+                                     <h3>{{ bike.titel }}<span>{{ bike.titel_model }}</span></h3>
+                                     <h4><span> Price $ {{ bike.price }} </span></h4>
+                                        <form action="{% url 'cart:cart_add' bike.id %}" method="post">
+                                        <p class="qty">Quantity ::
+                                            {{ item.update_quantity_form.quantity }}
+                                            {{ item.update_quantity_form.updatr }}
+                                            <input type="submit" value="Update">
+                                            {% csrf_token %}
+                                        </p>
+                                        </form> {# { item.quantity }#}
+
+                                </div>
+                                <div class="clearfix"></div>
+                                    <div class="delivery">
+                                        <p>Service Charges:: Usd.1.00</p>
+                                        <span>Delivered in 2-3 bussiness days</span>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                             </div>
+
+                    {% endwith %}
+                {% endfor %}
+        </div>
+        </div>
+
+        <div class="col-md-3 cart-total">
+			 <a class="continue" href="{% url 'bicycles:bicycles' %}">Continue to shopping</a>
+			 <div class="price-details">
+				 <h3>Price Details</h3>
+				 <span>Total</span>
+				 <span class="total">1000.00</span>
+				 <span>Discount</span>
+				 <span class="total">---</span>
+				 <span>Delivery Charges</span>
+				 <span class="total">150.00</span>
+				 <div class="clearfix"></div>
+			 </div>
+			 <h4 class="last-price">TOTAL</h4>
+			 <span class="total final">{{ cart.get_total_price }}</span>
+			 <div class="clearfix"></div>
+			 <a class="order" href="{% url 'orders:order_create' %}">Place Order</a>
+			 <div class="total-item">
+				 <h3>OPTIONS</h3>
+				 <h4>COUPONS</h4>
+				 <a class="cpns" href="#">Apply Coupons</a>
+				 <p><a href="#">Log In</a> to use accounts - linked coupons</p>
+			 </div>
+			</div>
+    </div>
+</div>
+
+{% endblock %}

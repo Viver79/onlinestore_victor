@@ -1,0 +1,14 @@
+<section id='contact' class="contact">
+    <div class="container">
+         <h3>CONTACT US</h3>
+         <p>Please contact us for all inquiries and purchase options.</p>
+         <form name="sendMessage" id="contactForm" novalidate action="" method="post">
+             {% csrf_token %}
+             {{form.name}}<!--<input type="text" placeholder="NAME" required="">-->
+             {{form.surname}}<!--<input type="text" placeholder="SURNAME" required="">-->
+             {{form.user_email}}<!--<input class="user" type="text" placeholder="USER@DOMAIN.COM" required=""><br>-->
+             {{form.message}}<!--<textarea placeholder="MESSAGE"></textarea>-->
+             <input type="submit" value="SEND">
+         </form>
+    </div>
+</section>

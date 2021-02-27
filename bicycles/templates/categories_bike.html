@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'banner_small.html' %}
+    <div class="bikes">
+        <div class="mountain-sec">
+            <h2>Категория</h2>
+
+            <div class="bike">
+                {% for item in items %}
+                <div class=class="col-md-3">
+                    <a href='{% url "bicycles:delete_bike_type" pk=item.pk%}'>
+                        <button type="button" class="btn btn-primary btn-sm">Удалить</button>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href='{% url "bicycles:update_bike_type" pk=item.pk%}'>
+                        <button type="button" class="btn btn-primary btn-sm">Обновить</button>
+                    </a>
+                </div>
+                <div class="col-md-3">{{ item.title }}</div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+            <div class="row">
+                <div class='col-md-6 centered'>
+                     <a href='{% url "bicycles:add_bike_type" %}'>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Добавить новую категорию
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <hr/>
+        </div>
+         <div class="section-title text-center">
+            <h3>Производитель(бренд)</h3>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            {% for item in brand %}
+            <div class="row">
+                <div class="col-md-3">
+                    <a href='{% url "bicycles:delete_bike_brand" pk=item.pk%}'>
+                        <button type="button" class="btn btn-primary btn-sm">Удалить</button>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href='{% url "bicycles:update_bike_brand" pk=item.pk%}'>
+                        <button type="button" class="btn btn-primary btn-sm">Обновить</button>
+                    </a>
+                </div>
+                <div class="col-md-3">{{ item.title }}</div>
+            </div>
+            <hr/>
+            {% endfor %}
+            <div class="row">
+                <div class='col-md-6 centered'>
+                     <a href='{% url "bicycles:add_bike_brand" %}'>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Добавить нового производителя
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <hr/>
+        </div>
+    </div>
+{% endblock %}
