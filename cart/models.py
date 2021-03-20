@@ -48,7 +48,7 @@ class Cart(object):
 
     def save(self):
         # Помечаем сесию как измененную
-        self.session[settings.CART_SESSION_ID] = self.cart
+        #self.session[settings.CART_SESSION_ID] = self.cart
         self.session.modified = True
 
     def remove(self, bike):

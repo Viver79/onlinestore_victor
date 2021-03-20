@@ -47,7 +47,7 @@ class ProductBicycles(models.Model):
 
     class Meta:
         ordering = ('titel',)
-        index_together = (('id', 'titel_model'))
+        index_together = (('id', 'titel_model'),)
 
     def __str__(self):
         return self.titel

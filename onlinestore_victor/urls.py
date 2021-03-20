@@ -19,9 +19,15 @@ from .views import get_main_page
 from django.conf.urls.static import static
 from onlinestore_victor import settings
 
+from accounts.views import login_view, logout_view, register_view
+
 urlpatterns = [
     path('', get_main_page, name='index'),
     path('admin/', admin.site.urls),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('register/', register_view, name='register'),
+
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
     path('bicycles/', include(('bicycles.urls', 'bicycles'))),

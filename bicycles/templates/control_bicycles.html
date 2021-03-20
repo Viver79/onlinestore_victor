@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'banner_small.html' %}
+    <div class="bikes">
+        <div class="mountain-sec">
+            <div class="section-title text-center section_margin">
+                <h2>Bicycles</h2>
+
+                <div class="col-md-10 col-md-offset-1">
+                    {% for item in items_bicycles %}
+                    <div class="row">
+                        <div class="col-md-2">
+                            <a href='{% url "bicycles:delete_bicycles" pk=item.pk%}'>
+                                <button type="button" class="btn btn-primary btn-sm">Delete</button>
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href='{% url "bicycles:update_bicycles" pk=item.pk%}'>
+                                <button type="button" class="btn btn-primary btn-sm">Update</button>
+                            </a>
+                        </div>
+                        <div class="col-md-6">{{ item.titel }} ; {{ item.titel_model }} ; {{ item.price }} ;
+                            {{ item.bike_type }} ; {{ item.bike_brand }}</div>
+                    </div>
+                    <br/>
+                    {% endfor %}
+                    <div class="row">
+                        <div class='col-md-4 centered'>
+                            <a href='{% url "bicycles:add_bicycles" %}'>
+                                <button type="button" class="btn btn-primary btn-sm">Add new category</button>
+                            </a>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+            <br/>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+{% endblock %}

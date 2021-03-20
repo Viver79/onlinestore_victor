@@ -1,0 +1,1 @@
+web: gunicorn onlinestore_victor.wsgi --log-file -

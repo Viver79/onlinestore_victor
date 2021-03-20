@@ -1188,6 +1188,7 @@ p.qty {
   cursor: pointer;
   width: 28px;
   height: 28px;
+  display: block;
   position: absolute;
   right: 0px;
   top: 0px;

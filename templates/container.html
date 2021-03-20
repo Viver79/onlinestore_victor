@@ -6,10 +6,6 @@
                 <a href="{% url 'index' %}"><img src={% static "images/logo.png" %} alt=""/></a>
             </div>
             <div class="top-nav">
-                <!--label class="mobile_menu" for="mobile_menu">
-                    <span>Menu</span>
-                </label>
-                <input id="mobile_menu" type="checkbox"-->
                 <ul class="nav">
                     <li class="dropdown1"><a href="{% url 'bicycles:bicycles' %}">BICYCLES</a>
                         <ul class="dropdown2">
@@ -18,7 +14,7 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li class="dropdown1"><a href="parts.html">PARTS</a>
+                    <li class="dropdown1"><a href="404.html">PARTS</a>
                         <ul class="dropdown2">
                             <li><a href="parts.html">CHAINS</a></li>
                             <li><a href="parts.html">TUBES</a></li>
@@ -26,7 +22,7 @@
                             <li><a href="parts.html">DISC BREAKS</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown1"><a href="accessories.html">ACCESSORIES</a>
+                    <li class="dropdown1"><a href="404.html">ACCESSORIES</a>
                         <ul class="dropdown2">
                             <li><a href="accessories.html">LOCKS</a></li>
                             <li><a href="accessories.html">HELMETS</a></li>
@@ -34,26 +30,42 @@
                             <li><a href="accessories.html">JERSEYS</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown1"><a href="404.html">EXTRAS</a>
-                        <ul class="dropdown2">
-                            <li><a href="404.html">CLASSIC BELL</a></li>
-                            <li><a href="404.html">BOTTLE CAGE</a></li>
-                            <li><a href="404.html">TRUCK GRIP</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown1"><a href={#% url 'messages' %#}>MANAGER</a>
+                    {% if 'manager' in user.groups.all.0.name or user.is_staff %}
+                    <li class="dropdown1"><a>MANAGER</a>
                         <ul class="dropdown2">
                             <li><a href="{% url 'contact:contact' %}">MESSEGES</a></li>
-                            <li><a href="{% url 'bicycles:categories_bike' %}">CONTROL BIKE</a></li>
-                            <li><a href="404.html">TRUCK GRIP</a></li>
+                            <li><a href="{% url 'bicycles:categories_type' %}">CONTROL BIKE TYPE</a></li>
+                            <li><a href="{% url 'bicycles:categories_brand' %}">CONTROL BIKE BRAND</a></li>
+                            <li><a href="{% url 'bicycles:control_bicycles' %}">CONTROL BICYCLES</a></li>
+                            </ul>
+                    </li>
+                    {% endif %}
+                    {% if not request.user.is_authenticated %}
+                    <li class="dropdown1"><a href="{% url 'login' %}">LOGIN</a>
+                        <ul class="dropdown2">
+                            {% if 'admin' in user.groups.all.0.name or user.is_staff %}
+                            <li><a href="{% url 'register' %}">REGISTRATION</a></li>
+                            {% endif %}
                         </ul>
                     </li>
-                        <a class="shop" href="{% url 'cart:cart_detail' %}">{#"cart.html"#}<img src={% static "images/cart.png" %} alt=""/></a>
+                    {% endif %}
+                    {% if 'manager' in user.groups.all.0.name or user.is_staff %}
+                    <li class="dropdown1"><a href="{% url 'logout' %}">LOGOUT</a>
+                        <ul class="dropdown2">
+                            {% if 'admin' in user.groups.all.0.name or user.is_staff %}
+                            <li><a href="{% url 'register' %}">REGISTRATION</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                        <a class="shop" href="{% url 'cart:cart_detail' %}">
+                            <img src={% static "images/cart.png" %} alt=""/>
                             {% with total_item=cart|length %}
                                 {% if cart|length > 0 %}
                                 {{ total_item }}item{{ total_item|pluralize }}
                                 {% endif %}
                             {% endwith %}
+                        </a>
                 </ul>
             </div>
             <div class="clearfix"></div>

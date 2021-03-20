@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 
-<h1>Оформление</h1>
-    <div class="cart-top"><h3>Ваш заказ</h3>
+<h1>Chekout</h1>
+    <div class="cart-top"><h3>Your order</h3>
         <ul>
             {% for item in cart %}
                 <li>
@@ -17,8 +17,8 @@
 
     <form action="." method="post" class="order-form">
         {{ form.as_p }}
-        <p><input type="submit" value="Разместить заказ"></p>
+        <p><input type="submit" value="Place order"></p>
         {% csrf_token %}
     </form>
-</>
+
 {% endblock %}

@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<h1>Спасибо!</h1>
-    <p>Ваш заказ был успешно оформлен. Номер вашего заказа:
+<div class="cart-header">
+<h1>Thank you!</h1>
+    <p>You order has been successfully completed. Your order number is:
     <strong>{{ order.id }}</strong> . </p>
+</div>
 {% endblock %}
