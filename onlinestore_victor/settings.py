@@ -113,7 +113,6 @@ DATABASES = {
      }
  }
 
-postgres://knxqgztwsxhsrn:05e240c50c7b5f16cf424ea7d178303e8f355abc0c343407fc9e16fc24db1b19@ec2-54-72-155-238.eu-west-1.compute.amazonaws.com:5432/ddrjbop3ra67vn
 
 db = dj_database_url.config()
 DATABASES['default'].update(db)
