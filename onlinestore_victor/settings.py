@@ -167,9 +167,9 @@ else:
         os.path.join(BASE_DIR, 'static'),
     ]
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' #ïðèìåíèòü ñæàòèå,íå êýøèðîâàíèÿ
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' #применить сжатие,не кэширования
     #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage' #Ïðîâåðêà
+    #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage' #Проверка
 
 
 CART_SESSION_ID = 'cart'
