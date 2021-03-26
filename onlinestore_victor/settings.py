@@ -21,8 +21,8 @@ DB_HOST = os.environ.get('DB_HOST')
 DB_USER = os.environ.get('DB_USER')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
