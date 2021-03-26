@@ -16,7 +16,7 @@
     "model": "auth.permission",
     "pk": 52,
     "fields": {
-        "name": "Can view Заказ",
+        "name": "Can view ?????",
         "content_type": 13,
         "codename": "view_order"
     }
@@ -85,14 +85,6 @@
             1
         ],
         "user_permissions": []
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 13,
-    "fields": {
-        "app_label": "orders",
-        "model": "order"
     }
 },
 {
