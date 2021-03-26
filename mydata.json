@@ -16,7 +16,7 @@
     "model": "auth.permission",
     "pk": 52,
     "fields": {
-        "name": "Can view «‡Í‡Á",
+        "name": "Can view –ó–∞–∫–∞–∑",
         "content_type": 13,
         "codename": "view_order"
     }
