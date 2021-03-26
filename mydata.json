@@ -1,5 +1,109 @@
 [
 {
+    "model": "admin.logentry",
+    "pk": 172,
+    "fields": {
+        "action_time": "2021-03-21T19:57:45.862Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "97",
+        "object_repr": "Order 97",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view Заказ",
+        "content_type": 13,
+        "codename": "view_order"
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "manager",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$qvr1qlP0p2FJunTCVVCrZd$F3QDNF30R0639+yXU2rccjuofGwxTz0BH9THS8XTKdQ=",
+        "last_login": "2021-03-21T20:08:34.195Z",
+        "is_superuser": true,
+        "username": "victor",
+        "first_name": "",
+        "last_name": "",
+        "email": "vic5@ua.fm",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-01-27T00:17:30.835Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$zFwbHwNgsRafJkIYNiYy9r$Pe/4kYVpBZSUQkfjTAJ416ntRZUZUye2ypePS5Wu2KM=",
+        "last_login": "2021-03-20T18:14:37.117Z",
+        "is_superuser": false,
+        "username": "Bro",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-03-17T19:18:53Z",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$0yJaMAP9ED6rASvhx0Ykm1$Qb1tNLYEFphMYrLLT8c0arVyTlZjV67d0j8Z2e0XKwM=",
+        "last_login": "2021-03-20T18:11:55Z",
+        "is_superuser": false,
+        "username": "BroPro",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-03-20T18:01:00Z",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "orders",
+        "model": "order"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x9gyezqucp70illcuviv7li68b9vfx73",
+    "fields": {
+        "session_data": "eyJjYXJ0Ijp7fX0:1lO12A:83QdKJFai_mYga-xTWVT2JLIjrXBv3U3Q4J1B-w4URw",
+        "expire_date": "2021-04-04T16:34:34.474Z"
+    }
+},
+{
     "model": "bicycles.bike_type",
     "pk": 1,
     "fields": {
@@ -60,7 +164,7 @@
         "titel": "SCOTT SPARK",
         "titel_model": "Model No: 3498",
         "price": "300.00",
-        "images": "images/bicycles/917effbf-9562-414d-91bd-1e0ecd94124a.jpg",
+        "images": "bicycles/917effbf-9562-414d-91bd-1e0ecd94124a.jpg",
         "bike_type": 1,
         "bike_brand": 1,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -76,7 +180,7 @@
         "titel": "POSTE MAN",
         "titel_model": "Model No:4581",
         "price": "250.00",
-        "images": "images/bicycles/baa0c635-e706-45d6-b50d-017971f3f258.jpg",
+        "images": "bicycles/baa0c635-e706-45d6-b50d-017971f3f258.jpg",
         "bike_type": 1,
         "bike_brand": 1,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -92,7 +196,7 @@
         "titel": "Chameleon",
         "titel_model": "Model No: 3505",
         "price": "256.00",
-        "images": "images/bicycles/9fc07b5c-ba74-4e21-8d33-00d263ea8c2e.jpg",
+        "images": "bicycles/9fc07b5c-ba74-4e21-8d33-00d263ea8c2e.jpg",
         "bike_type": 1,
         "bike_brand": 2,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported",
@@ -108,7 +212,7 @@
         "titel": "Chameleon Pro",
         "titel_model": "Model No: 3510",
         "price": "300.00",
-        "images": "images/bicycles/3bd3b83e-0c3a-46cb-a888-784732b1d1f6.jpg",
+        "images": "bicycles/3bd3b83e-0c3a-46cb-a888-784732b1d1f6.jpg",
         "bike_type": 1,
         "bike_brand": 2,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported",
@@ -124,7 +228,7 @@
         "titel": "Brave",
         "titel_model": "Model No: 2101",
         "price": "105.00",
-        "images": "images/bicycles/d8b03017-bd0a-4c3a-9701-2c3d47be02d8.jpg",
+        "images": "bicycles/d8b03017-bd0a-4c3a-9701-2c3d47be02d8.jpg",
         "bike_type": 1,
         "bike_brand": 3,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported",
@@ -140,7 +244,7 @@
         "titel": "Hilend",
         "titel_model": "Model No: 2108",
         "price": "198.00",
-        "images": "images/bicycles/e1538da1-5097-4700-9815-a9d1e0d74eec.jpg",
+        "images": "bicycles/e1538da1-5097-4700-9815-a9d1e0d74eec.jpg",
         "bike_type": 1,
         "bike_brand": 3,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported",
@@ -156,7 +260,7 @@
         "titel": "Hiperdrave 1",
         "titel_model": "Model No: 5001",
         "price": "500.00",
-        "images": "images/bicycles/8f64acbf-2401-4bef-a0b9-f04343b58df6.jpg",
+        "images": "bicycles/8f64acbf-2401-4bef-a0b9-f04343b58df6.jpg",
         "bike_type": 3,
         "bike_brand": 1,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -172,7 +276,7 @@
         "titel": "Contend",
         "titel_model": "Model No: 5002",
         "price": "498.00",
-        "images": "images/bicycles/32a92826-88d9-4109-9234-48d2223697c4.jpg",
+        "images": "bicycles/32a92826-88d9-4109-9234-48d2223697c4.jpg",
         "bike_type": 3,
         "bike_brand": 1,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -188,7 +292,7 @@
         "titel": "Strada",
         "titel_model": "Model No: 4001",
         "price": "350.00",
-        "images": "images/bicycles/e593b54f-f832-4067-b887-263c9e8e2eb6.jpg",
+        "images": "bicycles/e593b54f-f832-4067-b887-263c9e8e2eb6.jpg",
         "bike_type": 2,
         "bike_brand": 1,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -204,7 +308,7 @@
         "titel": "Strada comp",
         "titel_model": "Model No: 4002",
         "price": "375.00",
-        "images": "images/bicycles/fe1b5e13-9c57-4f39-bb0d-e6f4a934d0fa.jpg",
+        "images": "bicycles/fe1b5e13-9c57-4f39-bb0d-e6f4a934d0fa.jpg",
         "bike_type": 2,
         "bike_brand": 1,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -220,7 +324,7 @@
         "titel": "Defi",
         "titel_model": "Model No: 4003",
         "price": "356.00",
-        "images": "images/bicycles/929fbd28-7d3b-43d5-ab65-b7669bb599e5.jpg",
+        "images": "bicycles/929fbd28-7d3b-43d5-ab65-b7669bb599e5.jpg",
         "bike_type": 2,
         "bike_brand": 2,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
@@ -236,13 +340,73 @@
         "titel": "Beliv",
         "titel_model": "Model No: 4004",
         "price": "271.00",
-        "images": "images/bicycles/1c86a3e3-9277-45e8-acbc-721886e6b8b7.jpg",
+        "images": "bicycles/1c86a3e3-9277-45e8-acbc-721886e6b8b7.jpg",
         "bike_type": 2,
         "bike_brand": 2,
         "description": "The first mechanically-propelled, two-wheeled vehicle may have been built by Kirkpatrick MacMillan, a Scottish blacksmith, in 1839, although the claim is often disputed. He is also associated with the first recorded instance of a cycling traffic offense, when a Glasgow newspaper in 1842 reported an",
         "available": true,
         "created": "2021-02-01T22:08:45.760Z",
         "updated": "2021-02-01T22:08:45.760Z"
+    }
+},
+{
+    "model": "contact.usermessages",
+    "pk": 7,
+    "fields": {
+        "name": "Victor",
+        "surname": "Osmak",
+        "user_email": "vic5@ua.fm",
+        "message": "1123 Hellow",
+        "is_processed": false,
+        "send_date": "2021-03-14"
+    }
+},
+{
+    "model": "orders.order",
+    "pk": 132,
+    "fields": {
+        "first_name": "Victor",
+        "last_name": "Osmak",
+        "phone": "0672208195",
+        "email": "vic5@ukr.net",
+        "address": "Kiev",
+        "created": "2021-03-20T19:59:51.375Z",
+        "updated": "2021-03-20T19:59:51.375Z",
+        "paid": false
+    }
+},
+{
+    "model": "orders.order",
+    "pk": 133,
+    "fields": {
+        "first_name": "Victor",
+        "last_name": "Osmak",
+        "phone": "0672208195",
+        "email": "vic5@ukr.net",
+        "address": "Kiev",
+        "created": "2021-03-21T20:14:55.813Z",
+        "updated": "2021-03-21T20:14:55.813Z",
+        "paid": false
+    }
+},
+{
+    "model": "orders.orderitem",
+    "pk": 97,
+    "fields": {
+        "order": 132,
+        "bike": 8,
+        "price": "498.00",
+        "quantity": 1
+    }
+},
+{
+    "model": "orders.orderitem",
+    "pk": 98,
+    "fields": {
+        "order": 133,
+        "bike": 11,
+        "price": "356.00",
+        "quantity": 1
     }
 }
 ]
