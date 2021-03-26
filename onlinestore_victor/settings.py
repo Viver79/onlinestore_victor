@@ -15,28 +15,28 @@ import os
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# DB_NAME = os.environ.get('DB_NAME')
-# DB_PASSWORD = os.environ.get('DB_PASSWORD')
-# DB_HOST = os.environ.get('DB_HOST')
-# DB_USER = os.environ.get('DB_USER')
-#SECRET_KEY = os.environ.get('SECRET_KEY')
+DB_NAME = os.environ.get('DB_NAME')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+DB_USER = os.environ.get('DB_USER')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'aejh9j5lgx^%mpby^a%i-plt-p1fi-t$)r%)%04-eyqmfons_c'
-#SECRET_KEY = SECRET_KEY
+# SECRET_KEY = 'aejh9j5lgx^%mpby^a%i-plt-p1fi-t$)r%)%04-eyqmfons_c'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'online-store-bicycles-victor.herokuapp.com']
+ALLOWED_HOSTS = ['online-store-bicycles-victor.herokuapp.com']
 
 
 # Application definition
@@ -98,25 +98,25 @@ WSGI_APPLICATION = 'onlinestore_victor.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':  BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.postgresql',
-#          'NAME': DB_NAME,
-#          'PASSWORD': DB_PASSWORD,
-#          'HOST': DB_HOST,
-#          'USER': DB_USER,
-#          'PORT': '5432',
-#      }
-#  }
-#
-# db = dj_database_url.config()
-# DATABASES['default'].update(db)
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME':  BASE_DIR / 'db.sqlite3',
+#     }
+# }
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': DB_NAME,
+         'PASSWORD': DB_PASSWORD,
+         'HOST': DB_HOST,
+         'USER': DB_USER,
+         'PORT': '5432',
+     }
+ }
+
+db = dj_database_url.config()
+DATABASES['default'].update(db)
 
 
 # Password validation
@@ -167,9 +167,9 @@ else:
         os.path.join(BASE_DIR, 'static'),
     ]
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' #применить сжатие,не кэширования
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' #ГЇГ°ГЁГ¬ГҐГ­ГЁГІГј Г±Г¦Г ГІГЁГҐ,Г­ГҐ ГЄГЅГёГЁГ°Г®ГўГ Г­ГЁГї
     #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage' #Проверка
+    #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage' #ГЏГ°Г®ГўГҐГ°ГЄГ 
 
 
 CART_SESSION_ID = 'cart'
