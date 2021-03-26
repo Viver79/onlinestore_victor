@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block content %}
 {% include 'banner_small.html' %}
 <div class="bikes">
     <div class="mountain-sec">
             <h2>{{ bicycles_single_type.title }}</h2>
                 {% for bike in current_bike %}
-                   <div class="bike">
+                    <div class="bike">
                         <img src="{{ bike.images.url }}"  alt=""/>
                         <div class="bike-cost">
                             <div class="bike-mdl">
