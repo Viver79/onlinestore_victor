@@ -32,7 +32,7 @@ class ProductBicycles(models.Model):
     def get_file_name_bicycles(self, filename):
         ext = filename.split('.')[-1]
         filename = f'{uuid4()}.{ext}'
-        return path.join('images/bicycles', filename)
+        return path.join('bicycles', filename)
 
     titel = models.CharField(max_length=50, unique=True)
     titel_model = models.CharField(max_length=50, unique=True)
